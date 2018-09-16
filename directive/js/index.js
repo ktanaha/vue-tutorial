@@ -1,24 +1,14 @@
 var app = new Vue({
   el: "#app",
   data: {
-    newItem: "sample",
-    todos: []
+    message: "Hello Template!"
   },
   methods: {
-    addItem: function(event) {
-      if (this.newItem === "") {
-        return;
-      }
-      var todo = {
-        item: this.newItem,
-        isDone: false
-      };
-
-      this.todos.push(todo);
-      this.newItem = "";
-    },
-    deleteItem: function(index) {
-      this.todos.splice(index, 1);
+    clickHandler: function(event) {
+      this.message = this.message
+        .split("")
+        .reverse()
+        .join("");
     }
   }
 });

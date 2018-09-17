@@ -9,12 +9,15 @@
 
 <body>
     <div id="app">
-        <p v-once>
-            {{ message }}
+        <p>
+            <input type="text" v-model:value="km">km
         </p>
-        <button v-on:click="clickHandler">
-            Click!
-        </button>
+        <p>
+            <input type="text" v-model:value="m">m
+        </p>
+        <p>
+            <input type="text" v-model:value="mm">mm
+        </p>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/index.js"></script>

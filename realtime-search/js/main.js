@@ -15,7 +15,7 @@ var app = new Vue({
   methods: {
     getAnswer: function() {
       if (this.keyword === "") {
-        this.item = null;
+        this.items = null;
         return;
       }
 
@@ -26,13 +26,13 @@ var app = new Vue({
       axios
         .get("http://qiita.com/api/v2/items", { params })
         .then(function(response) {
-          console.log(response);
+          vm.items = response.data;
         })
         .catch(function(error) {
           vm.message = "Error" + error;
         })
         .finally(function() {
-          this.message = "";
+          vm.message = "";
         });
     }
   }

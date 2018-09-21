@@ -14,7 +14,7 @@ var app = new Vue({
   created: function() {
     this.keyword = "JavaScript";
     //this.getAnswer();
-    this.debouncedGetAnswer = _.debounce(this.getAnswer, 1000);
+    this.debouncedGetAnswer = _.debounce(this.getAnswer , 1000);
   },
   methods: {
     getAnswer: function() {

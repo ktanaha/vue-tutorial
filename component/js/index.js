@@ -1,24 +1,13 @@
-var app = new Vue({
-  el: "#app",
-  data: {
-    newItem: "sample",
-    todos: []
+Vue.component("button-counter", {
+  data: function() {
+    return {
+      count: 0
+    };
   },
-  methods: {
-    addItem: function(event) {
-      if (this.newItem === "") {
-        return;
-      }
-      var todo = {
-        item: this.newItem,
-        isDone: false
-      };
+  template:
+    '<div><span></span>count:</span><button v-on:click="count++">{{ count }}</button></div>'
+});
 
-      this.todos.push(todo);
-      this.newItem = "";
-    },
-    deleteItem: function(index) {
-      this.todos.splice(index, 1);
-    }
-  }
+var app = new Vue({
+  el: "#app"
 });
